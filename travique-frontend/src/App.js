@@ -1,28 +1,19 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import Header from './components/Header';
+import Home from './components/Home';
+import Features from './components/Features';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:5000/')
-      .then(response => response.text())
-      .then(data => {
-        console.log('Backend response:', data);
-        setMessage(data);
-      })
-      .catch(error => {
-        console.error('Error fetching from backend:', error);
-        setMessage('Failed to fetch from backend');
-      });
-  }, []);
-
   return (
-    <div className="App">
-      <h1>Travique 🌍</h1>
-      <p>{message}</p>
+    <div>
+      <Header />
+      <Home />
+      <Features />
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default Ap
